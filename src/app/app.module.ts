@@ -7,12 +7,17 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NvarComponent } from './nvar/nvar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NvarComponent,
+    
+   
   ],
   imports: [
     HttpClientModule,

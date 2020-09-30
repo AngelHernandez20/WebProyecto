@@ -1,1 +1,28 @@
-<p>landing-page works!</p>
+<div *ngIf="database.length===0">
+    <p>
+        No hay ni verga
+    </p>
+
+</div>
+
+<div>
+    <table>
+      <thead>
+  
+      <tr>
+    <th scope="col" class="table-active">id</th> 
+    <th scope="col" class="table-primary">name</th>
+    <th scope="col" class="table-secondary">price</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produc of database">
+  
+    <th scope="row" class="table-danger">{{produc.id}}</th>
+    <td class="table-warning">{{produc.name}}</td>
+    <td class="table-info">{{produc.price}}</td>
+      
+    </tr>
+  </tbody>
+  </table>
+  </div>

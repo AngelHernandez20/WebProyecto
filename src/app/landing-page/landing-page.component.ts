@@ -6,13 +6,13 @@ import { ServiceService} from '../service.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-databasee=[];
+database=[];
   constructor(private service:ServiceService) { }
 
   ngOnInit(): void {
-    this.service.getDatabase("/databasee").subscribe((data:any[])=>{
+    this.service.getDatabase("/database").subscribe((data:any[])=>{
       console.log(data);
-      this.databasee=data;
+      this.database=data;
     });
   }
 }
