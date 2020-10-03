@@ -8,7 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NvarComponent } from './nvar/nvar.component';
-
+//Firebase
+import {ReactiveFormsModule} from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from './../environments/environment'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,10 @@ import { NvarComponent } from './nvar/nvar.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

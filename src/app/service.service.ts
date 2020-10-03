@@ -1,16 +1,16 @@
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-  private RES_API_SERVER="http://localhost:3000";
 
-  constructor( private httpclient:HttpClient) { }
+  constructor(public afAuth: AngularFireAuth) { }
+ async loginGoogle()  {
 
-  public getDatabase (nameEndPoint:String)
-  {
-    return this.httpclient.get(this.RES_API_SERVER+nameEndPoint)
+      return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+
   }
-  
 }

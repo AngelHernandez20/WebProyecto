@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyecto1-afb8c": {
+      "hosting": {
+        "ProyectoWeb": [
+          "proyecto1-afb8c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyecto1-afb8c"
+  }
+}
