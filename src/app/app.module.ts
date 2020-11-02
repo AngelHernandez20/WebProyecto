@@ -12,7 +12,8 @@ import { NvarComponent } from './nvar/nvar.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
-import {environment} from './../environments/environment'; 
+import {environment} from './../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import {environment} from './../environments/environment';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
