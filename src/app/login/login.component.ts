@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import {ServiceService} from '../service.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,12 +13,20 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private authSvc:ServiceService) { }
+  
+  constructor(private authSvc:ServiceService,private router: Router) { }
   ngOnInit(): void {
   }
 
   async onGoogleLogin() {
-      await this.authSvc.loginGoogle();
+    //TO SERVICE
+    try {
+      const googleUser = this.authSvc.loginGoogle();
+      if (googleUser) {
+        this.router.navigate(['/home']);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
-
 }

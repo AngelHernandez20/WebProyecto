@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+
+import {ConexionAlumnosService} from '../conexion-alumnos.service';
+import { Alumno } from '../Model/Alumno';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  alumns : Alumno[];
+  constructor(private listServ : ConexionAlumnosService) { }
 
   ngOnInit(): void {
-    
+    this.listServ.getAllAlumns().subscribe( data => (this.alumns=data));
+  }
+
+  render(): void {
+    this.listServ.getAllAlumns().subscribe( data => (this.alumns=data));
   }
 }
