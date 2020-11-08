@@ -12,6 +12,13 @@ import { Alumno } from '../Model/Alumno';
 })
 export class LandingPageComponent implements OnInit {
 
+  llenado = {
+    id:null,
+    name:'' ,
+    age:18 ,  
+    email:'',
+  }
+
   alumns : Alumno[];
   constructor(private listServ : ConexionAlumnosService) { }
 
@@ -21,5 +28,16 @@ export class LandingPageComponent implements OnInit {
 
   render(): void {
     this.listServ.getAllAlumns().subscribe( data => (this.alumns=data));
+  }
+
+  agregarAlum(){
+    this.listServ.addNuevoAlumno(this.llenado).subscribe(data => console.log(data));
+    this.llenado = {
+      id: null,
+      name: '',
+      age: 0,
+      email: '',
+    };
+    window.location.reload();    
   }
 }
