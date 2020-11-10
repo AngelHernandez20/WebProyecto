@@ -4,16 +4,17 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-  apiKey: "AIzaSyDM7ZKEmoO0CiGNAl0MLBTeaEtkGUTN1HI",
-  authDomain: "proyecto1-afb8c.firebaseapp.com",
-  databaseURL: "https://proyecto1-afb8c.firebaseio.com",
-  projectId: "proyecto1-afb8c",
-  storageBucket: "proyecto1-afb8c.appspot.com",
-  messagingSenderId: "471606070835",
-  appId: "1:471606070835:web:60f19547ed5fcc7edc9d46",
-  measurementId: "G-VM2WF5LQ9W"
- }
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  firebaseConfig: {
+    apiKey: "AIzaSyALqpJcANgeugkQM9ch2XDyNyTukXCeZYA",
+    authDomain: "alumnos-proyecto.firebaseapp.com",
+    databaseURL: "https://alumnos-proyecto.firebaseio.com",
+    projectId: "alumnos-proyecto",
+    storageBucket: "alumnos-proyecto.appspot.com",
+    messagingSenderId: "874181606612",
+    appId: "1:874181606612:web:03e6e30e44fc8eefad8f41",
+    measurementId: "G-WGYV5L86QK"
+  },
 };
 
 /*

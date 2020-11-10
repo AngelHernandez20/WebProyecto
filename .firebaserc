@@ -6,6 +6,13 @@
           "proyecto1-afb8c"
         ]
       }
+    },
+    "alumnos-proyecto": {
+      "hosting": {
+        "ProyectoWeb": [
+          "alumnos-proyecto"
+        ]
+      }
     }
   },
   "projects": {

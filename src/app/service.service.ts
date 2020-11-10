@@ -12,5 +12,6 @@ export class ServiceService {
 
       return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
 
+      
   }
 }

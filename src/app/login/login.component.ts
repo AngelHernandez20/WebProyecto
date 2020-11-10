@@ -17,16 +17,13 @@ export class LoginComponent implements OnInit {
   constructor(private authSvc:ServiceService,private router: Router) { }
   ngOnInit(): void {
   }
-
   async onGoogleLogin() {
-    //TO SERVICE
     try {
-      const googleUser = this.authSvc.loginGoogle();
-      if (googleUser) {
-        this.router.navigate(['/home']);
-      }
+      await this.authSvc.loginGoogle();
     } catch (error) {
       console.log(error);
     }
   }
+
+
 }

@@ -19,5 +19,8 @@ export class ConexionAlumnosService {
     return this.http.post<Alumno>(this.API,alumno);
   }
 
+  actAlumno(alumno:Alumno): Observable<Alumno>{
+    return this.http.post<Alumno>(this.API,alumno);
+  }
 
 }

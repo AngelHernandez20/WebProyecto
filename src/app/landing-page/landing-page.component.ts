@@ -15,12 +15,13 @@ export class LandingPageComponent implements OnInit {
   llenado = {
     id:null,
     name:'' ,
-    age:18 ,  
+    age:null ,  
     email:'',
   }
 
   alumns : Alumno[];
   constructor(private listServ : ConexionAlumnosService) { }
+
 
   ngOnInit(): void {
     this.listServ.getAllAlumns().subscribe( data => (this.alumns=data));
@@ -39,5 +40,10 @@ export class LandingPageComponent implements OnInit {
       email: '',
     };
     window.location.reload();    
+  }
+
+  actualizarAlum(){
+    const newAlum = { name: ' ', age:34 ,email: ' '};
+    this.listServ.actAlumno(newAlum).subscribe(alumns => console.log(this.alumns));
   }
 }
