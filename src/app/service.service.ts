@@ -8,10 +8,17 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
 
   constructor(public afAuth: AngularFireAuth) { }
- async loginGoogle()  {
+  async loginGoogle() {
 
-      return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-
-      
+    return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+  async register(NombreU:string ,email: string, password: string) {
+    try {
+      const resultado = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      return resultado;
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 }

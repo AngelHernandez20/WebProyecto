@@ -19,11 +19,12 @@ export class LoginComponent implements OnInit {
   }
   async onGoogleLogin() {
     try {
-      await this.authSvc.loginGoogle();
+      const googleUser = this.authSvc.loginGoogle();
+      if (googleUser) {
+        this.router.navigate(['/home']);
+      }
     } catch (error) {
       console.log(error);
     }
   }
-
-
 }
