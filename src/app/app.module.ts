@@ -13,7 +13,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from './../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { EditComponent } from './edit/edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegisterComponent,
     NvarComponent,
+    
+    EditComponent,
     
    
   ],
