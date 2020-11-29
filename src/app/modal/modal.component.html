@@ -1,0 +1,42 @@
+
+  <!-- Modal -->
+  <div id="ventana" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Actualizar Libro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form class="form-book" #formBook="ngForm" (ngSubmit)="onSaveBook(formBook)">
+              <div class="form-group">
+                <input type="hidden" id="id" name="id" class="form-control" 
+                 [(ngModel)]="this.listServ.selectedBook.id">
+                  <label for="">Nombre</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Nombre"
+                  [(ngModel)]="this.listServ.selectedBook.name">
+              </div> 
+
+                <div >
+                  <label for="">Edad</label>
+                  <input type="text" id="age" name="age" class="form-control" placeholder="Edad"
+                  [(ngModel)]="this.listServ.selectedBook.age">
+
+                </div> 
+                  
+                <div class="form-group">
+                  <label for="">Correo</label>
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Correo"
+                  [(ngModel)]="this.listServ.selectedBook.email">
+                </div>
+                  
+              
+            <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

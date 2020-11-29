@@ -1,3 +1,4 @@
+import { ModalComponent } from './modal/modal.component';
 import { EditComponent } from './edit/edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path : '',redirectTo:'/home',pathMatch:'full' },
   {path : 'register',component: RegisterComponent},
   {path : 'edit', component:EditComponent},
+  {path : 'modal', component:ModalComponent},
+  {path : '***', pathMatch:'full', redirectTo:'modal'},
   
 ];
 

@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Alumno } from './../Model/Alumno';
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 
@@ -20,17 +21,18 @@ export class LandingPageComponent implements OnInit {
 
   llenado = {
     id:null,
-    name:'' ,
+    name:'',
     age:null ,  
     email:'',
   }
-
+  SelectedAlumno: Alumno;
   alumns : Alumno[];
-  constructor(private listServ : ConexionAlumnosService, private router: Router, private service: ServiceService) { }
+  constructor(private listServ : ConexionAlumnosService, private router: Router, private service: ServiceService) {}
 
 
   ngOnInit(): void {
     this.listServ.getAllAlumns().subscribe( data => (this.alumns=data));
+    
   }
 
   render(): void {
@@ -39,45 +41,29 @@ export class LandingPageComponent implements OnInit {
 
   agregarAlum(){
     this.listServ.addNuevoAlumno(this.llenado).subscribe(data => console.log(data));
-    this.llenado = {
+    this.llenado ={
       id: null,
       name: '',
-      age: 0,
+      age: " ",
       email: '',
     };
     alert("Alumno Agregado")
     window.location.reload();    
   }
-
-// ------------------------------------------------------------
-  Editar(alumns:Alumno){
-    localStorage.setItem("id",alumns.id.toString());
-    this.router.navigate(["edit"]);
-  }
-
-  actualizarAlum(){
-    const newAlum = { name: ' ', age:0 ,email: ' '};
-    this.listServ.actAlumno(newAlum).subscribe(alumns => console.log(this.alumns));
-  }
-
-  // ----------------------------------------------------------------
-
-  // delete(id:number):void{
-  //   const myAlumno = {id:18}
-  //   this.listServ.deleteAlumno(myAlumno.id).subscribe();
-  //   window.location.reload();  
-  // }
-
-   delete(alumns:Alumno):void{
+// -------------------------------------------------------------
+  delete(alumns:Alumno):void{
+    console.log(alumns);
      this.listServ.deleteAlumno(alumns)
      .subscribe(data=>{
-       this.alumns=this.alumns.filter(a=>a!==alumns);
-       window.location.reload(); 
+      //  this.alumns=this.alumns.filter(a=>a!==alumns);
+      
+        window.location.reload(); 
      })
   }
-  // delete(id:number)
-  // {
-  //   console.log(id);
 
-  // }
+  // --------------------------------------------------------------------
+  
+  cargarDatos(alumns:Alumno):void{
+    this.listServ.selectedBook = Object.assign({},alumns);    
+   }
 }

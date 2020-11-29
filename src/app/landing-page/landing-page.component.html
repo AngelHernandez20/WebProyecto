@@ -48,8 +48,9 @@
             <td>{{alumno.email}}</td>
 
             <td>
-              <button  (click)="Editar(alumno)" class="btn btn-warning">Editar</button>
+              <button type="button" class="btn btn-primary float-right mb-3" (click)="cargarDatos(alumno)" data-toggle="modal" data-target="#ventana" >Editar</button>
               <button (click)="delete(alumno.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+              
             </td>
           </tr>
         </tbody>
@@ -57,3 +58,5 @@
     </div>
   </div>
 </div>
+
+<app-modal></app-modal> 

@@ -12,20 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  alumns : Alumno;
+  // alumns : Alumno;
+
 
   constructor(private router:Router,private listServ : ConexionAlumnosService, private service:ServiceService) { }
 
   ngOnInit(): void {
-    this.Editar(); 
+    // this.Editar(); 
   }
 
-  Editar(){
-    let id=localStorage.getItem("id");
-    this.listServ.getAlumnosId(+id)
-    .subscribe(data=>{
-      this.alumns=data;
-    })
+  // Editar(){
+  //   console.log("id");
+  //   let id=localStorage.getItem("id");
+  //    this.listServ.getAlumnoId(+id)
+  //    .subscribe(data=>{
+  //      this.alumns=data;
+  //    })
   }
 
   // Actualizar(id:number){
@@ -37,4 +39,4 @@ export class EditComponent implements OnInit {
   //   })
   // }
 
-}
+

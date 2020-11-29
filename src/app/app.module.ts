@@ -16,6 +16,7 @@ import {environment} from './../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { EditComponent } from './edit/edit.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { EditComponent } from './edit/edit.component';
     NvarComponent,
     
     EditComponent,
+    
+    ModalComponent,
     
    
   ],
