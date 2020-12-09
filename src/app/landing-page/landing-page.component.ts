@@ -8,10 +8,6 @@ import { from } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
 
 
-
-
-
-
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -26,7 +22,9 @@ export class LandingPageComponent implements OnInit {
     email:'',
   }
   SelectedAlumno: Alumno;
+  
   alumns : Alumno[];
+
   constructor(private listServ : ConexionAlumnosService, private router: Router, private service: ServiceService) {}
 
 
@@ -47,8 +45,9 @@ export class LandingPageComponent implements OnInit {
       age: " ",
       email: '',
     };
-    alert("Alumno Agregado")
-    window.location.reload();    
+    console.log(this.llenado)
+     alert("Alumno Agregado")
+      window.location.reload();    
   }
 // -------------------------------------------------------------
   delete(alumns:Alumno):void{
@@ -64,6 +63,6 @@ export class LandingPageComponent implements OnInit {
   // --------------------------------------------------------------------
   
   cargarDatos(alumns:Alumno):void{
-    this.listServ.selectedBook = Object.assign({},alumns);    
+    this.listServ.selectedAlumno = Object.assign({},alumns);    
    }
 }

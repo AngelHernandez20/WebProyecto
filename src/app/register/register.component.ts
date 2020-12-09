@@ -1,35 +1,54 @@
+import { ServicesService } from './../auth/services.service';
+import { UserInterface } from './../Model/user-interface';
 import { Component, OnInit } from '@angular/core';
-import{FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {ServiceService} from '../service.service';
+import { UserService } from './../user.service';
+
+
+
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.css'],
+  providers: [ServicesService]
 })
 export class RegisterComponent implements OnInit {
-  
-  registerForm= new FormGroup({
-    NombreU: new FormControl(''),
+
+
+  public newuser: UserInterface;
+
+  registerForm = new FormGroup({
+    username: new FormControl(''),
     email: new FormControl(''),
-    password: new FormControl(''),
-    
-  })
-  constructor(private authSvc:ServiceService,private router: Router) { }
+    password1: new FormControl(''),
+    password2: new FormControl(''),
+  });
+
+  constructor(private authSvc: ServicesService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  
+
+
   async onRegister() {
-    const {NombreU, email, password } = this.registerForm.value;
-    try {
-      const user = await this.authSvc.register(NombreU,email, password);
-      if (user) {
-        this.router.navigate(['/home']);
+    this.newuser = {} = await this.registerForm.value;
+    
+    
+      try {
+        let Response = await this.authSvc.authRegister(this.newuser).subscribe(async data => {
+
+          await this.router.navigate(['/home']);
+          window.location.reload();
+        })
+      } catch (error) {
+        
       }
-    } catch (error) {
-      
-    }
+    
   }
+
+//-------------------------------------------------------------
+
 }

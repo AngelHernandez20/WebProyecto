@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
   <div class="wrapper fadeInDown mt-5">
     <div id="formContent">
-      <!-- Tabs Titles -->
-
-      <!-- Icon -->
+    
       <div class="fadeIn first">
-        <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+       
       </div>
       <div class="mmmm"><img src="../assets/c.png" alt=""></div>
 
-      <!-- Login Form -->
-      <form [formGroup] = "registerForm" (ngSubmit)= "onRegister()">
-        <input type="text" id="NombreU" class="fadeIn second" name="login" placeholder="Nombre del estudiante" formControlName="NombreU">
-        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
-        <input type="password" id="password" class="fadeIn second" name="password" placeholder="Password" formControlName="password">
+      
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <input formControlName="username" type="text" class="fadeIn second" placeholder="User Name">
+
+        <input formControlName="email" type="email" class="fadeIn second" placeholder="Email">
+        
+        <input formControlName="password1" type="password" class="form-control" placeholder="Password">
+
+        <input formControlName="password2" type="password" class="form-control" placeholder="Repeat Password">
 
         <input type="submit" class="fadeIn fourth" value="Registrar">
+        
+        <div id="formFooter">
+          <a routerLink="/login"clas="form-control">Do you have account?</a>
+        </div>
         
       </form>
     </div>
   </div>
 </body>
 
-</html>

@@ -19,7 +19,7 @@ export class ConexionAlumnosService {
   
   
 
-  public selectedBook:Alumno={
+  public selectedAlumno:Alumno={
     id:null,
     name: '',
     age: null,
@@ -63,5 +63,5 @@ export class ConexionAlumnosService {
     // this.API = `http://127.0.0.1:8000/api/v1/detail/alumnos/${alumnoId}/`;
     return this.http.put<Alumno>(API,alumno);
   }
-
 }
+
