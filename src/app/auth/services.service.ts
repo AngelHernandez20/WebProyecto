@@ -18,7 +18,7 @@ export class ServicesService {
   private appuser: UserInterface;
   private CurrentUser: UserInterface;
 
-  private API_REST = 'http://127.0.0.1:8000/api/v1/auth/' //Mi link 
+  private API = 'http://127.0.0.1:8000/api/v1/auth/'
   private Token;
   
   constructor(public afAuth: AngularFireAuth, private http: HttpClient) { }
@@ -42,17 +42,14 @@ export class ServicesService {
       console.log(error);
     }
   }
-
-  //*******************************************************/
   
-  authRegister(newUser: UserInterface): Observable<any> {
+  Registro(newUser: UserInterface): Observable<any> {
     try {
-      return this.http.post<any>(`${this.API_REST}registration/`,
+      return this.http.post<any>(`${this.API}registration/`,
         newUser).pipe(tap(
           (res: any) => {
             if (res) {
-              newUser.password1 = "*******";
-              newUser.password2 = "*******";
+              
               this.setToken(res.key, newUser);
             }
           })
@@ -61,13 +58,12 @@ export class ServicesService {
     }
   }
 
-  authLogin(newUser: UserInterface): Observable<any> {
-    return this.http.post<any>(`${this.API_REST}login/`,
+  LoginEntrar(newUser: UserInterface): Observable<any> {
+    return this.http.post<any>(`${this.API}login/`,
       newUser).pipe(tap(
         (res: any) => {
           if (res) {
-            newUser.password1 = "*******";
-            newUser.password2 = "*******";
+            
             this.setToken(res.key, newUser);
             this.loggedIn.next(true);
           }
@@ -75,13 +71,13 @@ export class ServicesService {
       );
   }
 
-  authLogout(key = ''){
+  LogoutSalir(key = ''){
     this.Token = '';
     this.CurrentUser = null;
     this.loggedIn.next(false);
     localStorage.removeItem("ACCESS_TOKEN");
     localStorage.removeItem("CurrentUser");
-    return this.http.post(`${this.API_REST}logout/`,{})
+    return this.http.post(`${this.API}logout/`,{})
   }
 
   private setToken(token: string, newuser: UserInterface) {
@@ -91,12 +87,12 @@ export class ServicesService {
     this.CurrentUser = newuser;
   }
 
-  private getToken() {
-    if (!this.Token) {
-      this.Token = localStorage.getItem('ACCESS_TOKEN')
-    }
-    return this.Token;
-  }
+  // private getToken() {
+  //   if (!this.Token) {
+  //     this.Token = localStorage.getItem('ACCESS_TOKEN')
+  //   }
+  //   return this.Token;
+  // }
 
   get onlogged(): Observable<boolean> {
     return this.loggedIn.asObservable();

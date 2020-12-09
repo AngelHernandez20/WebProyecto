@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     
     
       try {
-        let Response = await this.authSvc.authRegister(this.newuser).subscribe(async data => {
+        let Response = await this.authSvc.Registro(this.newuser).subscribe(async data => {
 
           await this.router.navigate(['/home']);
           window.location.reload();

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.newLoggin = {} = await this.loginForm.value;
     this.newLoggin.password2=this.newLoggin.password1;
       try {
-        let Response = this.authSvc.authLogin(this.newLoggin).subscribe(async data=>{
+        let Response = this.authSvc.LoginEntrar(this.newLoggin).subscribe(async data=>{
           await this.router.navigate(['/home']);
           await window.location.reload();
         });
