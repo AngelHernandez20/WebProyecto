@@ -8,7 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NvarComponent } from './nvar/nvar.component';
+import { NavbarComponent } from './nvar/nvar.component';
 //Firebase
 import {ReactiveFormsModule} from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -25,7 +25,7 @@ import { ModalComponent } from './modal/modal.component';
     LandingPageComponent,
     LoginComponent,
     RegisterComponent,
-    NvarComponent,
+    NavbarComponent,
     
     EditComponent,
     
