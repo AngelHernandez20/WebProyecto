@@ -100,7 +100,7 @@ export class ServicesService {
   // }
 
 
-  private setToken(token: string, newuser: UserInterface) {
+   setToken(token: string, newuser: UserInterface) {
     localStorage.setItem('ACCESS_TOKEN', token);
     localStorage.setItem('CurrentUser', JSON.stringify(newuser));
     this.Token = token;
@@ -149,5 +149,6 @@ export class ServicesService {
     let user_string = JSON.stringify(user);
     localStorage.setItem("currentUser", user_string);
   }
+
 
 }

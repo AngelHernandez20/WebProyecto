@@ -2,7 +2,7 @@ import { ServicesService } from './../auth/services.service';
 
 import { UserInterface } from './../Model/user-interface';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -15,11 +15,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+
   public newLoggin:UserInterface;
 
 
   loginForm = new FormGroup({
-    username: new FormControl(''),
+   
     email: new FormControl(''),
     password: new FormControl(''),
   });

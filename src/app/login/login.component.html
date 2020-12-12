@@ -7,11 +7,12 @@
 
       <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-        <input formControlName="username" type="text" class="fadeIn third" placeholder="username" required>
+        <input formControlName="email" type="email" class="fadeIn third" placeholder="Email" required>
+        
+        
 
-        <input formControlName="email" type="email" class="fadeIn third" placeholder="email" required>
-
-        <input formControlName="password" type="password" class="fadeIn third" placeholder="password" required>
+        <input formControlName="password" type="password" class="fadeIn third" placeholder="Password" required>
+       
         
         <button type="submit" class="mt-1 fadeIn fourth" >Entrar</button>
         

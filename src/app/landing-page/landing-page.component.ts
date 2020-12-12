@@ -66,3 +66,4 @@ export class LandingPageComponent implements OnInit {
     this.listServ.selectedAlumno = Object.assign({},alumns);    
    }
 }
+  

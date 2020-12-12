@@ -1,3 +1,4 @@
+import { LoginGuard } from './guards2/login.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { ModalComponent } from './modal/modal.component';
 import { EditComponent } from './edit/edit.component';
@@ -10,12 +11,12 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
-  { path :'login',component : LoginComponent },
+  { path :'login',component : LoginComponent,canActivate:[LoginGuard]},
   { path : 'home' ,component : LandingPageComponent,canActivate:[AuthGuard]},
   { path : '',redirectTo:'/login',pathMatch:'full' },
-  {path : 'register',component: RegisterComponent},
-  {path : 'edit', component:EditComponent,canActivate:[AuthGuard]},
-  {path : 'modal', component:ModalComponent,canActivate:[AuthGuard]},
+  {path : 'register',component: RegisterComponent,canActivate:[LoginGuard]},
+  {path : 'edit', component:EditComponent},
+  {path : 'modal', component:ModalComponent},
   {path : '***', pathMatch:'full', redirectTo:'modal'},
   
 ];
