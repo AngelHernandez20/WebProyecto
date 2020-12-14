@@ -16,7 +16,7 @@ export class ConexionAlumnosService {
 
   constructor(private http: HttpClient) { }
   //private API = 'http://127.0.0.1:8000/api/v1/alumnos/';
-  private API = 'http://backweb.ddns.net/api/v1/alumnos';
+  private API = 'http://backweb.ddns.net/api/v1/alumnos/';
   
 
   public selectedAlumno:Alumno={
