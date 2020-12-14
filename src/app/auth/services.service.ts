@@ -75,7 +75,7 @@ export class ServicesService {
 
   loginuser(email: string, password1: string): Observable<any> {
     // const url_api = "http://127.0.0.1:8000/api/v1/auth/login/";
-    const url_api = "http://backweb.ddns.net/api/v1/auth//login/";
+    const url_api = "http://backweb.ddns.net/api/v1/auth/login/";
     
     return this.http
       .post<UserInterface>(
