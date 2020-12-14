@@ -48,7 +48,9 @@ export class ConexionAlumnosService {
   // }  
 
   deleteAlumno(id): Observable<{}>{
-     this.API = `http://127.0.0.1:8000/api/v1/detail/alumnos/${id}/`;
+    this.API = `'http://backweb.ddns.net/api/v1/detail/alumnos/${id}/`;
+    
+    //  this.API = `http://127.0.0.1:8000/api/v1/detail/alumnos/${id}/`;
     //this.API = `http://127.0.0.1:8000/api/v1/detail/alumnos/12/`;
     return this.http.delete(this.API);
   }
@@ -59,7 +61,9 @@ export class ConexionAlumnosService {
     // TODO: not null
     console.log(alumno);
     const alumnoId = alumno.alumnoId;
-    const API= `http://127.0.0.1:8000/api/v1/detail/alumnos/${alumno.id}/`;
+    // 'http://backweb.ddns.net/api/v1/
+    const API= `'http://backweb.ddns.net/api/v1/detail/alumnos/${alumno.id}/`;
+    // const API= `http://127.0.0.1:8000/api/v1/detail/alumnos/${alumno.id}/`;
     // this.API = `http://127.0.0.1:8000/api/v1/detail/alumnos/${alumnoId}/`;
     return this.http.put<Alumno>(API,alumno);
   }
