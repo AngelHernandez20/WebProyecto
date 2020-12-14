@@ -21,7 +21,7 @@ export class ServicesService {
   private appuser: UserInterface;
   private CurrentUser: UserInterface;
 
-  private API = 'http://127.0.0.1:8000/api/v1/auth/'
+  private API = 'http://backweb.ddns.net/api/v1/auth/'
   private Token;
   
   constructor(public afAuth: AngularFireAuth, private http: HttpClient,private storage: AngularFireStorage) {
